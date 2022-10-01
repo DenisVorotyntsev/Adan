@@ -1,0 +1,5 @@
+tensorflow==2.3.0
+torch==1.11.0
+numpy==1.18.5
+matplotlib==3.5.3
+pandas==1.4.4
