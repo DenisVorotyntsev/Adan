@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="adan-tensorflow",
     packages=find_packages(exclude=[]),
-    version="1.0.0",
+    version="1.0.1",
     license="MIT",
     description="Adan - (ADAptive Nesterov momentum algorithm) Optimizer in Tensorflow",
     author="Denis Vorotyntsev",

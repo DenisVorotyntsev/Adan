@@ -211,10 +211,11 @@ class Adan(tf.keras.optimizers.Optimizer):
             (exp_avg / bias_correction1 + beta2 * exp_avg_diff / bias_correction2)
         ) / denom
 
-        var_update = var.assign_sub(var_update * lr) / (1 + lr * weight_decay)
+        var_updated = var - var_update * lr
+        var_updated = var_updated / (1 + lr * weight_decay)
         return tf.group(
             *[
-                var_update,
+                var.assign(var_updated, use_locking=self._use_locking),
                 exp_avg,
                 exp_avg_diff,
                 exp_avg_sq,
